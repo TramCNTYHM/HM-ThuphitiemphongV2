@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title>HÓC MÔN-THU TIÊM PHÒNG</title>
+  <title>HÓC MÔN-THU TIÊM PHÒNG V2</title>
   <link rel="stylesheet" href="style.css">
 
   <script defer="" src="/__/firebase/8.2.3/firebase-app.js"></script>
@@ -68,6 +68,7 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd4: '',
         tht2: '',
         vdnc2: ''
+       totalCost: ''
       });
     } else if (sum < 10) {
       printResults({
@@ -78,6 +79,7 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd4: 'Miễn Phí',
         tht2: 'Miễn Phí',
         vdnc2: 'Miễn Phí'
+        totalCost: '0'
       });
     } else if (10 <= sum & sum < 30) {
       printResults({
@@ -88,6 +90,7 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd4: 'Thu 6.500đ',
         tht2: 'Thu 4.900đ',
         vdnc2: 'Thu 16.800đ'
+        totalCost: calculateTotalCost(11.600, 16.800, 6.500, 4.900, 16.800) });
       });
     } else if (30 <= sum & sum < 300) {
       printResults({
@@ -98,7 +101,8 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
         vdnc2: 'Thu 35.000đ'
-      });
+       totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
+    });
     } else if (sum => 300) {
       printResults({
         gsthucnuoi1: 'QM Lớn',
@@ -108,10 +112,12 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
         vdnc2: 'Thu 35.000đ'
+        totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
       });
     }
 
   }    
+  
 </script>
 
 <style>
