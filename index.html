@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title>HÓC MÔN-THU TIÊM PHÒNG</title>
+  <title>HÓC MÔN-THU TIÊM PHÒNG f2</title>
   <link rel="stylesheet" href="style.css">
 
   <script defer="" src="/__/firebase/8.2.3/firebase-app.js"></script>
@@ -55,8 +56,8 @@
     sum = heo1 + heo2 + heo3 + heo4 + heo5 + heo6 + bo1 + bo2 + bo3 + bo4 + trau1 + trau2 + de + cuu;
     document.getElementById("sum").value = Math.round(sum * 100) / 100;
 
-    sum2 = heo1 / 0.016 + heo2 / 0.2 + heo3 / 0.5 + heo4 / 0.6 + heo5 / 0.2 + heo6 / 0.2 + bo1 / 0.2 + bo2 + bo3 / 0.7 + bo4 / 0.34 + trau1 / 0.24 + trau2 / 0.7 + de / 0.05 + cuu / 0.06;
-    document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
+sum2 = heo1/0.016 + heo2/0.2 + heo3/0.5 + heo4/0.6 + heo5/0.2 + heo6/0.2 + bo1/0.2 + bo2 + bo3/0.7 + bo4/0.34 + trau1/0.24 + trau2/0.7 + de/0.05 + cuu/0.06;
+document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
 
     if (sum == 0) {
       printResults({
@@ -66,8 +67,7 @@
         fmd2: '',
         fmd4: '',
         tht2: '',
-        vdnc2: '',
-        totalCost: ''
+        vdnc2: ''
       });
     } else if (sum < 10) {
       printResults({
@@ -77,8 +77,7 @@
         fmd2: 'Miễn Phí',
         fmd4: 'Miễn Phí',
         tht2: 'Miễn Phí',
-        vdnc2: 'Miễn Phí',
-        totalCost: '0'
+        vdnc2: 'Miễn Phí'
       });
     } else if (10 <= sum & sum < 30) {
       printResults({
@@ -88,8 +87,7 @@
         fmd2: 'Thu 16.800đ',
         fmd4: 'Thu 6.500đ',
         tht2: 'Thu 4.900đ',
-        vdnc2: 'Thu 16.800đ',
-        totalCost: calculateTotalCost(11.600, 16.800, 6.500, 4.900, 16.800)
+        vdnc2: 'Thu 16.800đ'
       });
     } else if (30 <= sum & sum < 300) {
       printResults({
@@ -99,10 +97,9 @@
         fmd2: 'Thu 34.000đ',
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
-        vdnc2: 'Thu 35.000đ',
-        totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
+        vdnc2: 'Thu 35.000đ'
       });
-    } else if (sum >= 300) {
+    } else if (sum => 300) {
       printResults({
         gsthucnuoi1: 'QM Lớn',
         thutientp: 'Thu 100%',
@@ -110,13 +107,12 @@
         fmd2: 'Thu 34.000đ',
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
-        vdnc2: 'Thu 35.000đ',
-        totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
+        vdnc2: 'Thu 35.000đ'
       });
     }
 
-  }
-  </script>
+  }    
+</script>
 
 <style>
   label {
