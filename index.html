@@ -1,4 +1,7 @@
 
+Xin lỗi vì sự thiếu sót của mình. Dưới đây là mã đã được cập nhật để thêm phần nhập số lượng tiêm phòng. Bạn có thể nhập số lượng tiêm phòng cho từng loại vật nuôi và loại vắc xin tương ứng, sau đó tính thành tiền:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +14,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title>HÓC MÔN-THU TIÊM PHÒNG V2</title>
+  <title>HÓC MÔN-THU TIÊM PHÒNG</title>
   <link rel="stylesheet" href="style.css">
 
   <script defer="" src="/__/firebase/8.2.3/firebase-app.js"></script>
@@ -56,8 +59,8 @@
     sum = heo1 + heo2 + heo3 + heo4 + heo5 + heo6 + bo1 + bo2 + bo3 + bo4 + trau1 + trau2 + de + cuu;
     document.getElementById("sum").value = Math.round(sum * 100) / 100;
 
-sum2 = heo1/0.016 + heo2/0.2 + heo3/0.5 + heo4/0.6 + heo5/0.2 + heo6/0.2 + bo1/0.2 + bo2 + bo3/0.7 + bo4/0.34 + trau1/0.24 + trau2/0.7 + de/0.05 + cuu/0.06;
-document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
+    sum2 = heo1 / 0.016 + heo2 / 0.2 + heo3 / 0.5 + heo4 / 0.6 + heo5 / 0.2 + heo6 / 0.2 + bo1 / 0.2 + bo2 + bo3 / 0.7 + bo4 / 0.34 + trau1 / 0.24 + trau2 / 0.7 + de / 0.05 + cuu / 0.06;
+    document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
 
     if (sum == 0) {
       printResults({
@@ -67,8 +70,8 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd2: '',
         fmd4: '',
         tht2: '',
-        vdnc2: ''
-       totalCost: ''
+        vdnc2: '',
+        totalCost: ''
       });
     } else if (sum < 10) {
       printResults({
@@ -78,7 +81,7 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd2: 'Miễn Phí',
         fmd4: 'Miễn Phí',
         tht2: 'Miễn Phí',
-        vdnc2: 'Miễn Phí'
+        vdnc2: 'Miễn Phí',
         totalCost: '0'
       });
     } else if (10 <= sum & sum < 30) {
@@ -89,8 +92,8 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd2: 'Thu 16.800đ',
         fmd4: 'Thu 6.500đ',
         tht2: 'Thu 4.900đ',
-        vdnc2: 'Thu 16.800đ'
-        totalCost: calculateTotalCost(11.600, 16.800, 6.500, 4.900, 16.800) });
+        vdnc2: 'Thu 16.800đ',
+        totalCost: calculateTotalCost(11.600, 16.800, 6.500, 4.900, 16.800)
       });
     } else if (30 <= sum & sum < 300) {
       printResults({
@@ -100,10 +103,10 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd2: 'Thu 34.000đ',
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
-        vdnc2: 'Thu 35.000đ'
-       totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
-    });
-    } else if (sum => 300) {
+        vdnc2: 'Thu 35.000đ',
+        totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
+      });
+    } else if (sum >= 300) {
       printResults({
         gsthucnuoi1: 'QM Lớn',
         thutientp: 'Thu 100%',
@@ -111,15 +114,29 @@ document.getElementById("sum2").value = Math.round(sum2 * 100) / 100;
         fmd2: 'Thu 34.000đ',
         fmd4: 'Thu 14.000đ',
         tht2: 'Thu 11.000đ',
-        vdnc2: 'Thu 35.000đ'
+        vdnc2: 'Thu 35.000đ',
         totalCost: calculateTotalCost(24.000, 34.000, 14.000, 11.000, 35.000)
-      
       });
     }
 
-  }    
-  } function calculateTotalCost(fmd1, fmd2, fmd4, tht2, vdnc2) { var heo1 = Number(document.getElementById("heo1").value); var heo2 = Number(document.getElementById("heo2").value); var heo3 = Number(document.getElementById("heo3").value); var heo4 = Number(document.getElementById("heo4").value); var heo5 = Number(document.getElementById("heo5").value); var heo6 = Number(document.getElementById("heo6").value); var bo1 = Number(document.getElementById("bo1").value); var bo2 = Number(document.getElementById("bo2").value); var bo3 = Number(document.getElementById("bo3").value); var bo4 = Number(document.getElementById("bo4").value); var trau1 = Number(document.getElementById("trau1").value); var trau2 = Number(document.getElementById("trau2").value); var de = Number(document.getElementById("de").value); var
-</script>
+  }
+
+  function calculateTotalCost(fmd1, fmd2, fmd4, tht2, vdnc2) {
+    var heo1 = Number(document.getElementById("heo1").value);
+    var heo2 = Number(document.getElementById("heo2").value);
+    var heo3 = Number(document.getElementById("heo3").value);
+    var heo4 = Number(document.getElementById("heo4").value);
+    var heo5 = Number(document.getElementById("heo5").value);
+    var heo6 = Number(document.getElementById("heo6").value);
+    var bo1 = Number(document.getElementById("bo1").value);
+    var bo2 = Number(document.getElementById("bo2").value);
+    var bo3 = Number(document.getElementById("bo3").value);
+    var bo4 = Number(document.getElementById("bo4").value);
+    var trau1 = Number(document.getElementById("trau1").value);
+    var trau2 = Number(document.getElementById("trau2").value);
+    var de = Number(document[_{{{CITATION{{{_1{](https://github.com/Blaklis/write-ups/tree/1cdc78246c5ac9d87e9dce7fe679c267afcc6814/grehack%2FWeb400%2FREADME.md)[_{{{CITATION{{{_2{](https://github.com/calebmwendwa/collection/tree/5fec852c54767cb81f8828bbd41706a61e01cd5a/scala-registration%2Fregistration.php)[_{{{CITATION{{{_3{](https://github.com/kingapyrek/Database-project---medical-clinic/tree/13b3b4f7fa82e7a8b852976c48f5b5cc38a5fe73/admin%2Fdyzury%2Fwyswietl_poradnie.php)[_{{{CITATION{{{_4{](https://github.com/Kchinkesh/Laravel-Model-Observer/tree/64b08d70ced7e16d846d7933f1ef245a487b442f/src%2Fresources%2Fviews%2Flayouts%2Fapp.blade.php)[_{{{CITATION{{{_5{](https://github.com/harsh-hp-4299/php-authorization-/tree/c372c155797d9e14431c2f37717aacecd0643c13/Php%20authorization%2Flogin.php)[_{{{CITATION{{{_6{](https://github.com/darshan207/Project_ArtGallery/tree/ad702ca7e998fcf35d0a698e4f57808f13fb110b/PHPProject_CE085_CE092_CE094%2FArtGallery%2Fsignup.php)[_{{{CITATION{{{_7{](https://github.com/diegoCcima/Navetec/tree/dfabda9b210f38c3b718476ed185bdbf1aff2e51/index.php)[_{{{CITATION{{{_8{](https://github.com/Pradip1399/STUDENT-PROGRESS-AND-PROFILE-MANAGER-SYSYTEM/tree/83ce5ff0086424c20ed860acddcf010b08fe857f/Project%2Flinkedpages%2Finfo.php)
+                    
+  </script>
 
 <style>
   label {
