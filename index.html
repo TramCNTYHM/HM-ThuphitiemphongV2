@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
   <meta charset="utf-8">
@@ -9,10 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title>HÓC MÔN-THU TIÊM PHÒNG</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <style>
+  body { font-family: sans-serif; }
   label {
     width: 160px;
     font-weight: 500;
@@ -27,6 +27,8 @@
   .results-group h5 {
     color: #0056b3;
     margin-top: 1rem;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
   }
   .total-row input {
       font-weight: bold;
@@ -41,68 +43,68 @@
     <div class="row heo">
       <div class="col-md-4 col-sm-6">
         <label for="heo1">Heo < 28 ngày</label>
-        <input id="heo1" type="number" oninput="sumOfNbr()">
+        <input id="heo1" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="heo5">Heo cai sữa</label>
-        <input id="heo5" type="number" oninput="sumOfNbr()">
+        <input id="heo5" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="heo6">Heo hậu bị Đực+Cái</label>
-        <input id="heo6" type="number" oninput="sumOfNbr()">
+        <input id="heo6" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="heo2">Heo Thịt</label>
-        <input id="heo2" type="number" oninput="sumOfNbr()">
+        <input id="heo2" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="heo3">Heo Nái</label>
-        <input id="heo3" type="number" oninput="sumOfNbr()">
+        <input id="heo3" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="heo4">Heo Nọc</label>
-        <input id="heo4" type="number" oninput="sumOfNbr()">
+        <input id="heo4" type="number" min="0" oninput="sumOfNbr()">
       </div>
     </div>
     <hr>
     <div class="row bo">
       <div class="col-md-4 col-sm-6">
         <label for="bo1">Bê (dưới 6tháng)</label>
-        <input id="bo1" type="number" oninput="sumOfNbr()">
+        <input id="bo1" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="bo2">Bò Sữa</label>
-        <input id="bo2" type="number" oninput="sumOfNbr()">
+        <input id="bo2" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="bo3">Bò lai hướng Thịt</label>
-        <input id="bo3" type="number" oninput="sumOfNbr()">
+        <input id="bo3" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="bo4">Bò lai SinD, bò nội</label>
-        <input id="bo4" type="number" oninput="sumOfNbr()">
+        <input id="bo4" type="number" min="0" oninput="sumOfNbr()">
       </div>
     </div>
     <hr>
     <div class="row trau">
       <div class="col-md-4 col-sm-6">
         <label for="trau1">Nghé</label>
-        <input id="trau1" type="number" oninput="sumOfNbr()">
+        <input id="trau1" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="trau2">Trâu</label>
-        <input id="trau2" type="number" oninput="sumOfNbr()">
+        <input id="trau2" type="number" min="0" oninput="sumOfNbr()">
       </div>
     </div>
     <hr>
     <div class="row de cuu">
       <div class="col-md-4 col-sm-6">
         <label for="de">Dê</label>
-        <input id="de" type="number" oninput="sumOfNbr()">
+        <input id="de" type="number" min="0" oninput="sumOfNbr()">
       </div>
       <div class="col-md-4 col-sm-6">
         <label for="cuu">Cừu</label>
-        <input id="cuu" type="number" oninput="sumOfNbr()">
+        <input id="cuu" type="number" min="0" oninput="sumOfNbr()">
       </div>
     </div>
     <hr>
@@ -128,34 +130,34 @@
     <hr>
 
     <div class="results-group">
-      <h5>Heo</h5>
+      <h5><img src="https://em-content.zobj.net/source/samsung/383/pig-face_1f437.png" width="24"> Heo</h5>
       <div class="row">
         <div class="col-md-3 col-6"><label for="fmd1">Đơn giá FMD:</label><input id="fmd1" type="text" disabled></div>
-        <div class="col-md-3 col-6"><label for="fmd1_qty">Số lượng tiêm:</label><input id="fmd1_qty" type="number" oninput="sumOfNbr()"></div>
+        <div class="col-md-3 col-6"><label for="fmd1_qty">Số lượng tiêm:</label><input id="fmd1_qty" type="number" min="0" oninput="sumOfNbr()"></div>
         <div class="col-md-3 col-6"><label for="fmd1_total">Thành tiền:</label><input id="fmd1_total" type="text" disabled></div>
       </div>
       
-      <h5>Dê Cừu</h5>
+      <h5><img src="https://em-content.zobj.net/source/samsung/383/goat_1f410.png" width="24"> Dê Cừu</h5>
       <div class="row">
         <div class="col-md-3 col-6"><label for="fmd4">Đơn giá FMD:</label><input id="fmd4" type="text" disabled></div>
-        <div class="col-md-3 col-6"><label for="fmd4_qty">Số lượng tiêm:</label><input id="fmd4_qty" type="number" oninput="sumOfNbr()"></div>
+        <div class="col-md-3 col-6"><label for="fmd4_qty">Số lượng tiêm:</label><input id="fmd4_qty" type="number" min="0" oninput="sumOfNbr()"></div>
         <div class="col-md-3 col-6"><label for="fmd4_total">Thành tiền:</label><input id="fmd4_total" type="text" disabled></div>
       </div>
 
-      <h5>Trâu Bò</h5>
+      <h5><img src="https://em-content.zobj.net/source/samsung/383/cow-face_1f42e.png" width="24"> Trâu Bò</h5>
       <div class="row">
         <div class="col-md-3 col-6"><label for="fmd2">Đơn giá FMD:</label><input id="fmd2" type="text" disabled></div>
-        <div class="col-md-3 col-6"><label for="fmd2_qty">Số lượng tiêm:</label><input id="fmd2_qty" type="number" oninput="sumOfNbr()"></div>
+        <div class="col-md-3 col-6"><label for="fmd2_qty">Số lượng tiêm:</label><input id="fmd2_qty" type="number" min="0" oninput="sumOfNbr()"></div>
         <div class="col-md-3 col-6"><label for="fmd2_total">Thành tiền:</label><input id="fmd2_total" type="text" disabled></div>
       </div>
        <div class="row">
         <div class="col-md-3 col-6"><label for="tht2">Đơn giá THT:</label><input id="tht2" type="text" disabled></div>
-        <div class="col-md-3 col-6"><label for="tht2_qty">Số lượng tiêm:</label><input id="tht2_qty" type="number" oninput="sumOfNbr()"></div>
+        <div class="col-md-3 col-6"><label for="tht2_qty">Số lượng tiêm:</label><input id="tht2_qty" type="number" min="0" oninput="sumOfNbr()"></div>
         <div class="col-md-3 col-6"><label for="tht2_total">Thành tiền:</label><input id="tht2_total" type="text" disabled></div>
       </div>
        <div class="row">
         <div class="col-md-3 col-6"><label for="vdnc2">Đơn giá VDNC:</label><input id="vdnc2" type="text" disabled></div>
-        <div class="col-md-3 col-6"><label for="vdnc2_qty">Số lượng tiêm:</label><input id="vdnc2_qty" type="number" oninput="sumOfNbr()"></div>
+        <div class="col-md-3 col-6"><label for="vdnc2_qty">Số lượng tiêm:</label><input id="vdnc2_qty" type="number" min="0" oninput="sumOfNbr()"></div>
         <div class="col-md-3 col-6"><label for="vdnc2_total">Thành tiền:</label><input id="vdnc2_total" type="text" disabled></div>
       </div>
     </div>
@@ -181,72 +183,60 @@
   
   // Main calculation function
   function sumOfNbr() {
-    var heo1, heo2, heo3, heo4, bo1, bo2, bo3, trau1, trau2, de, cuu, sum, sum2;
-    heo1 = Number(document.getElementById("heo1").value) * 0.016;
-    heo2 = Number(document.getElementById("heo2").value) * 0.2;
-    heo3 = Number(document.getElementById("heo3").value) * 0.5;
-    heo4 = Number(document.getElementById("heo4").value) * 0.6;
-    heo5 = Number(document.getElementById("heo5").value) * 0.2;
-    heo6 = Number(document.getElementById("heo6").value) * 0.2;
-    bo1 = Number(document.getElementById("bo1").value) * 0.2;
-    bo2 = Number(document.getElementById("bo2").value) * 1;
-    bo3 = Number(document.getElementById("bo3").value) * 0.7;
-    bo4 = Number(document.getElementById("bo4").value) * 0.34;
-    trau1 = Number(document.getElementById("trau1").value) * 0.24;
-    trau2 = Number(document.getElementById("trau2").value) * 0.7;
-    de = Number(document.getElementById("de").value) * 0.05;
-    cuu = Number(document.getElementById("cuu").value) * 0.06;
+    // --- PART 1: READ ANIMAL COUNTS AND CALCULATE ĐVN ---
+    const getValue = id => Number(document.getElementById(id).value) || 0;
+    
+    const dvn = {
+      heo1: getValue("heo1") * 0.016, heo2: getValue("heo2") * 0.2, heo3: getValue("heo3") * 0.5,
+      heo4: getValue("heo4") * 0.6, heo5: getValue("heo5") * 0.2, heo6: getValue("heo6") * 0.2,
+      bo1: getValue("bo1") * 0.2, bo2: getValue("bo2") * 1, bo3: getValue("bo3") * 0.7,
+      bo4: getValue("bo4") * 0.34, trau1: getValue("trau1") * 0.24, trau2: getValue("trau2") * 0.7,
+      de: getValue("de") * 0.05, cuu: getValue("cuu") * 0.06
+    };
 
-    // Calculate total livestock units (ĐVN)
-    sum = heo1 + heo2 + heo3 + heo4 + heo5 + heo6 + bo1 + bo2 + bo3 + bo4 + trau1 + trau2 + de + cuu;
+    const sum = Object.values(dvn).reduce((a, b) => a + b, 0);
     document.getElementById("sum").value = Math.round(sum * 100) / 100;
-    
-    // Calculate total number of animals
-    sum2 = (heo1 / 0.016) + (heo2 / 0.2) + (heo3 / 0.5) + (heo4 / 0.6) + (heo5 / 0.2) + (heo6 / 0.2) + 
-           (bo1 / 0.2) + bo2 + (bo3 / 0.7) + (bo4 / 0.34) + (trau1 / 0.24) + (trau2 / 0.7) + 
-           (de / 0.05) + (cuu / 0.06);
-    document.getElementById("sum2").value = Math.round(sum2);
 
-    // Determine farm scale and set per-head prices
-    if (sum == 0) {
-      printResults({
-        gsthucnuoi1: '', thutientp: '', fmd1: '', fmd2: '', fmd4: '', tht2: '', vdnc2: ''
-      });
+    // --- PART 2: CALCULATE ANIMAL GROUP TOTALS ---
+    const totalHeo = getValue("heo1") + getValue("heo2") + getValue("heo3") + getValue("heo4") + getValue("heo5") + getValue("heo6");
+    const totalTrauBo = getValue("bo1") + getValue("bo2") + getValue("bo3") + getValue("bo4") + getValue("trau1") + getValue("trau2");
+    const totalDeCuu = getValue("de") + getValue("cuu");
+    document.getElementById("sum2").value = totalHeo + totalTrauBo + totalDeCuu;
+
+    // --- PART 3: VALIDATE VACCINATION QUANTITY (NEW FEATURE) ---
+    function validateQuantity(inputId, max, animalName) {
+        const inputElement = document.getElementById(inputId);
+        if (getValue(inputId) > max) {
+            alert(`⚠️ Số lượng tiêm (${getValue(inputId)}) không được lớn hơn tổng đàn ${animalName} (${max}).`);
+            inputElement.value = max;
+        }
+    }
+    
+    validateQuantity('fmd1_qty', totalHeo, 'Heo');
+    validateQuantity('fmd4_qty', totalDeCuu, 'Dê Cừu');
+    validateQuantity('fmd2_qty', totalTrauBo, 'Trâu Bò');
+    validateQuantity('tht2_qty', totalTrauBo, 'Trâu Bò');
+    validateQuantity('vdnc2_qty', totalTrauBo, 'Trâu Bò');
+
+    // --- PART 4: DETERMINE FARM SCALE AND PRICES ---
+    if (sum === 0) {
+      printResults({ gsthucnuoi1: '', thutientp: '', fmd1: '', fmd2: '', fmd4: '', tht2: '', vdnc2: '' });
     } else if (sum < 10) {
-      printResults({
-        gsthucnuoi1: 'Nông Hộ', thutientp: 'Miễn Phí 100%', fmd1: 'Miễn Phí', fmd2: 'Miễn Phí', 
-        fmd4: 'Miễn Phí', tht2: 'Miễn Phí', vdnc2: 'Miễn Phí'
-      });
+      printResults({ gsthucnuoi1: 'Nông Hộ', thutientp: 'Miễn Phí 100%', fmd1: 'Miễn Phí', fmd2: 'Miễn Phí', fmd4: 'Miễn Phí', tht2: 'Miễn Phí', vdnc2: 'Miễn Phí' });
     } else if (sum >= 10 && sum < 30) {
-      printResults({
-        gsthucnuoi1: 'QM Nhỏ', thutientp: 'Thu 50%', fmd1: 'Thu 11.600đ', fmd2: 'Thu 16.800đ',
-        fmd4: 'Thu 6.500đ', tht2: 'Thu 4.900đ', vdnc2: 'Thu 16.800đ'
-      });
+      printResults({ gsthucnuoi1: 'QM Nhỏ', thutientp: 'Thu 50%', fmd1: 'Thu 11.600đ', fmd2: 'Thu 16.800đ', fmd4: 'Thu 6.500đ', tht2: 'Thu 4.900đ', vdnc2: 'Thu 16.800đ' });
     } else if (sum >= 30 && sum < 300) {
-      printResults({
-        gsthucnuoi1: 'QM Vừa', thutientp: 'Thu 100%', fmd1: 'Thu 24.000đ', fmd2: 'Thu 34.000đ',
-        fmd4: 'Thu 14.000đ', tht2: 'Thu 11.000đ', vdnc2: 'Thu 35.000đ'
-      });
-    } else if (sum >= 300) {
-      printResults({
-        gsthucnuoi1: 'QM Lớn', thutientp: 'Thu 100%', fmd1: 'Thu 24.000đ', fmd2: 'Thu 34.000đ',
-        fmd4: 'Thu 14.000đ', tht2: 'Thu 11.000đ', vdnc2: 'Thu 35.000đ'
-      });
+      printResults({ gsthucnuoi1: 'QM Vừa', thutientp: 'Thu 100%', fmd1: 'Thu 24.000đ', fmd2: 'Thu 34.000đ', fmd4: 'Thu 14.000đ', tht2: 'Thu 11.000đ', vdnc2: 'Thu 35.000đ' });
+    } else { // sum >= 300
+      printResults({ gsthucnuoi1: 'QM Lớn', thutientp: 'Thu 100%', fmd1: 'Thu 24.000đ', fmd2: 'Thu 34.000đ', fmd4: 'Thu 14.000đ', tht2: 'Thu 11.000đ', vdnc2: 'Thu 35.000đ' });
     }
 
-    // === NEW CODE: CALCULATE TOTAL COST ===
-    
-    // Helper function to parse price string (e.g., "Thu 11.600đ" -> 11600)
+    // --- PART 5: CALCULATE TOTAL COST ---
     function parsePrice(priceString) {
-      if (!priceString || priceString.toLowerCase().includes('miễn phí')) {
-        return 0;
-      }
-      // Remove all non-digit characters
-      const numericString = priceString.replace(/\D/g, '');
-      return Number(numericString);
+      if (!priceString || priceString.toLowerCase().includes('miễn phí')) return 0;
+      return Number(priceString.replace(/\D/g, ''));
     }
 
-    // Helper function to format number as Vietnamese currency
     function formatCurrency(number) {
         if (isNaN(number) || number === 0) return '0 đ';
         return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
@@ -258,16 +248,12 @@
     vaccineTypes.forEach(vaccine => {
         const priceString = document.getElementById(vaccine).value;
         const pricePerHead = parsePrice(priceString);
-        
-        const quantity = Number(document.getElementById(vaccine + '_qty').value) || 0;
-        
+        const quantity = getValue(vaccine + '_qty');
         const totalCost = pricePerHead * quantity;
         grandTotal += totalCost;
-        
         document.getElementById(vaccine + '_total').value = formatCurrency(totalCost);
     });
 
-    // Display the grand total
     document.getElementById('grand_total').value = formatCurrency(grandTotal);
   }
 
